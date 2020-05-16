@@ -1,15 +1,22 @@
 
-total = 0
-count = 0
+largest = 0
+smallest = None
 a= None
 while True :
     a= input('enter a number')
-    if(a == "Done") :
+    if(a == "done") :
         break
     try :
         a= int(a)
-        total+=a
-        count+=1
+        if a >largest :
+            largest = a
+
+        if smallest is None :
+            smallest = a
+
+        if a < smallest :
+            smallest = a
     except :
-        print('bad data')
-print(total,count,total/count)
+        print('Invalid input')
+print('Maximum is',largest)
+print('Minimum is',smallest)
